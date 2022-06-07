@@ -7,7 +7,7 @@
 FROM golang:1.18.1-bullseye AS builder
 
 # Download the source code
-RUN git clone https://github.com/SCP002/xTeVe.git /src
+RUN git clone https://github.com/dakota/xTeVe.git /src
 WORKDIR /src
 
 # Install dependencies
@@ -26,14 +26,15 @@ ARG BUILD_DATE
 ARG VCS_REF
 ARG XTEVE_PORT=34400
 ARG XTEVE_VERSION
+ARG XTEVE_UID=816
 
 LABEL org.label-schema.build-date="{$BUILD_DATE}" \
       org.label-schema.name="xTeVe" \
-      org.label-schema.description="Dockerized fork of xTeVe by SCP002" \
-      org.label-schema.url="https://hub.docker.com/r/scp002/xteve/" \
+      org.label-schema.description="Dockerized fork of xTeVe by dakota" \
+      org.label-schema.url="https://hub.docker.com/r/dakota/xteve/" \
       org.label-schema.vcs-ref="{$VCS_REF}" \
-      org.label-schema.vcs-url="https://github.com/SCP002/xTeVe" \
-      org.label-schema.vendor="SCP002" \
+      org.label-schema.vcs-url="https://github.com/dakota/xTeVe" \
+      org.label-schema.vendor="dakota" \
       org.label-schema.version="{$XTEVE_VERSION}" \
       org.label-schema.schema-version="1.0"
 
@@ -41,7 +42,6 @@ ENV XTEVE_BIN=/home/xteve/bin
 ENV XTEVE_CONF=/home/xteve/conf
 ENV XTEVE_HOME=/home/xteve
 ENV XTEVE_TEMP=/tmp/xteve
-ENV XTEVE_UID=31337
 ENV XTEVE_USER=xteve
 
 # Create the user to run inside the container

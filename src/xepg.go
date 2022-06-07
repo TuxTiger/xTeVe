@@ -299,6 +299,7 @@ func createXEPGDatabase() (err error) {
 	showInfo("XEPG:" + "Update database")
 
 	// Delete Channel with missing Channel Numbers.
+	showInfo("DB:" + "Delete missing channel numbers")
 	for id, dxc := range Data.XEPG.Channels {
 
 		var xepgChannel XEPGChannelStruct
@@ -318,6 +319,7 @@ func createXEPGDatabase() (err error) {
 	}
 
 	// Make a map of the db channels based on their previously downloaded attributes -- filename, group, title, etc
+	showInfo("DB:" + "Map db channels")
 	var xepgChannelsValuesMap = make(map[string]XEPGChannelStruct)
 	for _, v := range Data.XEPG.Channels {
 		var channel XEPGChannelStruct
@@ -329,6 +331,7 @@ func createXEPGDatabase() (err error) {
 		xepgChannelsValuesMap[channelHash] = channel
 	}
 
+	showInfo("DB:" + "Match active channels")
 	for _, dsa := range Data.Streams.Active {
 
 		var channelExists = false  // Decides whether a Channel should be added to the Database
@@ -465,7 +468,7 @@ func createXEPGDatabase() (err error) {
 		case false:
 			// New Channel
 			var xepg = createNewID()
-			xChannelID := func() string {
+			xChannelID := func() st ring {
 				if m3uChannel.PreserveMapping == "true" {
 					return getFreeChannelNumber(m3uChannel.UUIDValue)
 				} else {
