@@ -468,7 +468,7 @@ func createXEPGDatabase() (err error) {
 		case false:
 			// New Channel
 			var xepg = createNewID()
-			xChannelID := func() st ring {
+			xChannelID := func() string {
 				if m3uChannel.PreserveMapping == "true" {
 					return getFreeChannelNumber(m3uChannel.UUIDValue)
 				} else {
