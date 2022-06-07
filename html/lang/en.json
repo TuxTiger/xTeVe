@@ -430,7 +430,7 @@
     },
     "tlsMode": {
       "title": "TLS (HTTPS) mode",
-      "description": "Changes web server protocol to HTTPS.<br>For details, see <a>https://github.com/SCP002/xTeVe#tls-mode</a>"
+      "description": "Changes web server protocol to HTTPS.<br>For details, see <a>https://github.com/dakota/xTeVe#tls-mode</a>"
     },
     "filesUpdate":
     {

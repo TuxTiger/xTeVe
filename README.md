@@ -1,5 +1,5 @@
 <div align="center" style="background-color: #111; padding: 100;">
-    <a href="https://github.com/SCP002/xTeVe"><img width="880" height="200" src="html/img/logo_b_880x200.jpg" alt="xTeVe" /></a>
+    <a href="https://github.com/dakota/xTeVe"><img width="880" height="200" src="html/img/logo_b_880x200.jpg" alt="xTeVe" /></a>
 </div>
 <br>
 
@@ -47,7 +47,7 @@ Documentation for setup and configuration is [here](https://github.com/xteve-pro
 
 ## Downloads
 
-* See [releases page](https://github.com/SCP002/xTeVe/releases)
+* See [releases page](https://github.com/dakota/xTeVe/releases)
 
 ---
 
@@ -78,15 +78,15 @@ If the certificate is signed by a certificate authority (CA), it should be the c
 Pull from dockerhub:
 
 ```sh
-docker pull scp002/xteve:latest
+docker pull dakota/xteve:latest
 ```
 
 **OR** build your own image based on Dockerfile from this repository:
 
 ```sh
-git clone https://github.com/SCP002/xTeVe.git
+git clone https://github.com/dakota/xTeVe.git
 cd xTeVe
-docker build --tag scp002/xteve .
+docker build --tag dakotairene/xteve .
 ```
 
 ### Create a container
@@ -96,7 +96,7 @@ docker create \
     --tty \
     --publish 34400:34400 \
     --name xteve \
-    scp002/xteve
+    dakotairene/xteve
 ```
 
 With the specific timezone, ip and port:
@@ -108,7 +108,7 @@ docker create \
     --env XTEVE_PORT=12345 \
     --publish 192.168.88.218:12345:12345 \
     --name xteve \
-    scp002/xteve
+    dakotairene/xteve
 ```
 
 ### Start a container
@@ -152,8 +152,8 @@ With the command line argument `branch` the Git Branch can be changed. xTeVe mus
 xteve -branch beta
 
 ...
-[xTeVe] GitHub:                https://github.com/SCP002
-[xTeVe] Git Branch:            beta [SCP002]
+[xTeVe] GitHub:                https://github.com/dakota
+[xTeVe] Git Branch:            beta [dakota]
 ...
 ```
 
@@ -163,8 +163,8 @@ xteve -branch beta
 xteve -branch master
 
 ...
-[xTeVe] GitHub:                https://github.com/SCP002
-[xTeVe] Git Branch:            master [SCP002]
+[xTeVe] GitHub:                https://github.com/dakota
+[xTeVe] Git Branch:            master [dakota]
 ...
 ```
 
@@ -192,7 +192,7 @@ When the branch is changed, an update is only performed if there is a new versio
 #### 1. Download source code
 
 ```sh
-git clone https://github.com/SCP002/xTeVe.git
+git clone https://github.com/dakota/xTeVe.git
 ```
 
 #### 2. Install dependencies
@@ -260,7 +260,7 @@ When creating a fork, the xTeVe GitHub account must be changed from the source c
 xteve.go - Line: 29
 
 ```go
-var GitHub = GitHubStruct{Branch: "master", User: "SCP002", Repo: "xTeVe", Update: true}
+var GitHub = GitHubStruct{Branch: "master", User: "dakota", Repo: "xTeVe", Update: true}
 
 // Branch: GitHub Branch
 // User:   GitHub Username
